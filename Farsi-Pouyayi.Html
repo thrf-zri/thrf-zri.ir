@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="fa" dir="rtl" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اینفوگرافیک ادبیات عربی در دوران اسلامی</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+        
+        body {
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        
+        h1, h2, .section-title, .lalezar-text {
+            font-family: 'Lalezar', cursive;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Dark mode styles */
+        body.dark-mode {
+            background: #000000;
+            color: #f5f5f7;
+        }
+        
+        /* Light mode styles */
+        body.light-mode {
+            background: #ffffff;
+            color: #1d1d1f;
+        }
+        
+        body.light-mode .scroll-container {
+            background: #ffffff;
+        }
+        
+        body.light-mode .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.light-mode .glass-card:hover {
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+        
+        body.light-mode .content-text {
+            color: #515154;
+        }
+        
+        body.light-mode .hero-title {
+            background: linear-gradient(135deg, #1d1d1f 0%, #515154 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        body.light-mode .hero-subtitle {
+            color: #86868b;
+        }
+        
+        body.light-mode ul li {
+            color: #515154;
+        }
+        
+        body.light-mode ul li strong {
+            color: #1d1d1f;
+        }
+        
+        body.light-mode .dock {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        body.light-mode .dock-item::after {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1d1d1f;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        body.light-mode #theme-toggle,
+        body.light-mode #language-toggle {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.light-mode #current-language {
+            color: #1d1d1f !important;
+        }
+        
+        body.light-mode #theme-toggle svg path,
+        body.light-mode #language-toggle svg path {
+            fill: #1d1d1f;
+        }
+        
+        body.light-mode .highlight-box {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        
+        body.light-mode .era-1 .highlight-box {
+            background: rgba(255, 159, 10, 0.08);
+        }
+        
+        body.light-mode .era-2 .highlight-box {
+            background: rgba(50, 215, 75, 0.08);
+        }
+        
+        body.light-mode .era-3 .highlight-box {
+            background: rgba(10, 132, 255, 0.08);
+        }
+        
+        body.light-mode .era-4 .highlight-box {
+            background: rgba(255, 69, 58, 0.08);
+        }
+        
+        #theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        #theme-toggle:active {
+            transform: scale(0.95);
+        }
+        
+        .page-section {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 120px;
+            scroll-snap-align: start;
+        }
+        
+        .scroll-container {
+            height: 100%;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            background: #000000;
+        }
+        
+        /* Apple-style glassmorphism cards - Dark Mode */
+        .glass-card {
+            background: rgba(30, 30, 30, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* macOS Dock-style Timeline Navigation */
+        .dock-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+        
+        .dock {
+            display: flex;
+            align-items: flex-end;
+            gap: 12px;
+            padding: 8px 16px;
+            background: rgba(40, 40, 40, 0.8);
+            backdrop-filter: saturate(180%) blur(30px);
+            -webkit-backdrop-filter: saturate(180%) blur(30px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+        }
+        
+        .dock-item {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+        }
+        
+        .dock-item svg {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .dock-item:hover {
+            transform: translateY(-12px) scale(1.2);
+        }
+        
+        .dock-item:hover svg {
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.4));
+        }
+        
+        .dock-item.active {
+            transform: translateY(-8px) scale(1.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .dock-item::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(40, 40, 40, 0.95);
+            color: #f5f5f7;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            font-family: 'Vazirmatn', sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dock-item:hover::after {
+            opacity: 1;
+        }
+        
+        /* Active indicator dot */
+        .dock-indicator {
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #0a84ff;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .dock-item.active .dock-indicator {
+            opacity: 1;
+        }
+        
+        /* Enhanced color scheme for dark mode */
+        .era-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-family: 'Lalezar', cursive;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid;
+        }
+        
+        .era-1 { 
+            background: linear-gradient(135deg, rgba(255, 159, 10, 0.15) 0%, rgba(255, 149, 0, 0.1) 100%); 
+            color: #ff9f0a;
+            border-color: rgba(255, 159, 10, 0.3);
+        }
+        .era-2 { 
+            background: linear-gradient(135deg, rgba(50, 215, 75, 0.15) 0%, rgba(48, 209, 88, 0.1) 100%); 
+            color: #32d74b;
+            border-color: rgba(50, 215, 75, 0.3);
+        }
+        .era-3 { 
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.15) 0%, rgba(0, 122, 255, 0.1) 100%); 
+            color: #0a84ff;
+            border-color: rgba(10, 132, 255, 0.3);
+        }
+        .era-4 { 
+            background: linear-gradient(135deg, rgba(255, 69, 58, 0.15) 0%, rgba(255, 59, 48, 0.1) 100%); 
+            color: #ff453a;
+            border-color: rgba(255, 69, 58, 0.3);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        
+        .era-1 .section-title { color: #ff9f0a; }
+        .era-2 .section-title { color: #32d74b; }
+        .era-3 .section-title { color: #0a84ff; }
+        .era-4 .section-title { color: #ff453a; }
+        
+        .content-text {
+            color: #d1d1d6;
+            line-height: 1.8;
+            font-size: 1.125rem;
+            font-weight: 400;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-right: 3px solid;
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 12px;
+        }
+        
+        .era-1 .highlight-box { 
+            border-color: #ff9f0a;
+            background: rgba(255, 159, 10, 0.1);
+        }
+        .era-2 .highlight-box { 
+            border-color: #32d74b;
+            background: rgba(50, 215, 75, 0.1);
+        }
+        .era-3 .highlight-box { 
+            border-color: #0a84ff;
+            background: rgba(10, 132, 255, 0.1);
+        }
+        .era-4 .highlight-box { 
+            border-color: #ff453a;
+            background: rgba(255, 69, 58, 0.1);
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        
+        ul li {
+            position: relative;
+            padding-right: 32px;
+            margin-bottom: 16px;
+            color: #d1d1d6;
+            line-height: 1.8;
+            font-size: 1.0625rem;
+        }
+        
+        ul li::before {
+            content: '●';
+            position: absolute;
+            right: 0;
+            font-size: 1rem;
+            top: 0;
+        }
+        
+        .era-1 ul li::before { color: #ff9f0a; }
+        .era-2 ul li::before { color: #32d74b; }
+        .era-3 ul li::before { color: #0a84ff; }
+        .era-4 ul li::before { color: #ff453a; }
+        
+        ul li strong {
+            color: #f5f5f7;
+        }
+        
+        /* Hero section */
+        .hero-section {
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-family: 'Lalezar', cursive;
+            font-size: 4.5rem;
+            font-weight: 400;
+            letter-spacing: -1px;
+            color: #f5f5f7;
+            margin-bottom: 16px;
+            line-height: 1.05;
+            background: linear-gradient(135deg, #f5f5f7 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.75rem;
+            color: #86868b;
+            font-weight: 400;
+            margin-bottom: 48px;
+        }
+        
+        .scroll-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: #86868b;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+        
+        .scroll-arrow {
+            width: 24px;
+            height: 24px;
+            border-left: 2px solid #86868b;
+            border-bottom: 2px solid #86868b;
+            transform: rotate(-45deg);
+        }
+        
+        /* Fade in animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-line {
+            height: 2px;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .content-text {
+                font-size: 1rem;
+            }
+            .dock {
+                padding: 6px 12px;
+                gap: 8px;
+            }
+            .dock-item {
+                width: 40px;
+                height: 40px;
+            }
+            .dock-item svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full w-full dark-mode">
+  <div class="scroll-container h-full w-full"><!-- Hero Section -->
+   <section class="page-section" id="section-0">
+    <div class="hero-section fade-in">
+     <h1 id="main-title" class="hero-title">سفر ادبیات عربی</h1>
+     <p id="subtitle" class="hero-subtitle">از صحرا تا عصر طلایی بغداد</p>
+     <div class="flex justify-center gap-3 mb-12">
+      <div class="hero-line w-16" style="background: #ff9f0a;"></div>
+      <div class="hero-line w-16" style="background: #32d74b;"></div>
+      <div class="hero-line w-16" style="background: #0a84ff;"></div>
+      <div class="hero-line w-16" style="background: #ff453a;"></div>
+     </div>
+     <div class="scroll-indicator"><span style="font-size: 0.875rem;">برای شروع اسکرول کنید</span>
+      <div class="scroll-arrow"></div>
+     </div>
+    </div>
+   </section><!-- Era 1: Pre-Islamic -->
+   <section class="page-section" id="section-1">
+    <div class="max-w-4xl w-full">
+     <div class="glass-card p-10 md:p-16 fade-in"><span class="era-badge era-1">📜 قبل از ۶۲۲ م</span>
+      <h2 class="section-title era-1">۱. پایه‌های ادبی: دوران جاهلی</h2>
+      <p class="content-text mb-6">تصور کنید که عربستان پیش از اسلام، جایی بود که شاعران، بزرگترین و مهم‌ترین افراد جامعه به شمار می‌آمدند.</p>
+      <div class="highlight-box era-1">
+       <p class="font-bold text-lg mb-3 lalezar-text" style="color: #ff9f0a;">💎 معلقات سبع</p>
+       <p class="content-text">هفت قصیده‌ی بسیار معروف و بلند که ارزش ادبی آن‌ها آنقدر ����یاد بود که به آن‌ها "آویخ����ی‌ها" می‌گفتند.</p>
+      </div>
+      <ul>
+       <li><strong>موضوعات اصلی:</strong> وصف بیابان، جنگ‌ها، عشق‌های پاک و افتخار به قبیله</li>
+       <li><strong>شاعران برجسته:</strong> امرؤالقیس، طرفه، زهیر بن ابی سلمی</li>
+       <li><strong>ویژگی‌ها:</strong> فصاحت، بلاغت و توصیفات دقیق از طبیعت</li>
+      </ul>
+     </div>
+    </div>
+   </section><!-- Era 2: Early Islamic -->
+   <section class="page-section" id="section-2">
+    <div class="max-w-4xl w-full">
+     <div class="glass-card p-10 md:p-16 fade-in"><span class="era-badge era-2">🌙 ۶۲۲ - ۷۵۰ م</span>
+      <h2 class="section-title era-2">۲. عصر صدر ��سل��م و اموی</h2>
+      <p class="content-text mb-6">با ظهور اسلام، قرآن کریم به عنوان شاهکار ادبی عربی، الگوی جدیدی برای زبان و بیان ایجاد کرد.</p>
+      <div class="highlight-box era-2">
+       <p class="font-bold text-lg mb-3 lalezar-text" style="color: #32d74b;">🌟 ت��ول بزرگ</p>
+       <p class="content-text">شعر از وصف جنگ و بیابان به سمت معنویت، اخلاق و دعوت به اسلام حرکت کرد.</p>
+      </div>
+      <ul>
+       <li><strong>شعر سیاسی:</strong> ظهور شعرهای حزبی و احزاب مختلف</li>
+       <li><strong>غزل عذری:</strong> شعرهای عاشقانه و پاک با شاعرانی مانند جمیل بثینه</li>
+       <li><strong>نثر:</strong> رشد خطابه و نامه‌نگاری</li>
+       <li><strong>فرزدق و جریر:</strong> نقائض و مناظرات شعری</li>
+      </ul>
+     </div>
+    </div>
+   </section><!-- Era 3: Umayyad Expansion -->
+   <section class="page-section" id="section-3">
+    <div class="max-w-4xl w-full">
+     <div class="glass-card p-10 md:p-16 fade-in"><span class="era-badge era-3">🏛️ دوران اموی</span>
+      <h2 class="section-title era-3">۳. گسترش سبک‌های شعری</h2>
+      <p class="content-text mb-6">در دوران اموی، شعر عربی به اوج تنوع و پیچیدگی خود رسید.</p>
+      <div class="highlight-box era-3">
+       <p class="font-bold text-lg mb-3 lalezar-text" style="color: #0a84ff;">🎭 سه مکتب اصلی</p>
+       <p class="content-text">مکتب حجاز (غزل)، مکتب عراق (سیاسی)، مکتب بادیه (سنتی)</p>
+      </div>
+      <ul>
+       <li><strong>عمر بن ابی ربیعه:</strong> پیشگام شعر غزل شهری</li>
+       <li><strong>ذوالرمه:</strong> آخرین شاعر بزرگ بادیه‌نشین</li>
+       <li><strong>اخطل:</strong> شاعر مسیحی دربار اموی</li>
+       <li><strong>تنوع موضوعی:</strong> از عشق و ��ومانس تا سیاست و مدح</li>
+      </ul>
+     </div>
+    </div>
+   </section><!-- Era 4: Abbasid Golden Age -->
+   <section class="page-section" id="section-4">
+    <div class="max-w-4xl w-full">
+     <div class="glass-card p-10 md:p-16 fade-in"><span class="era-badge era-4">✨ ۷۵۰ - ۱۲۵۸ م</span>
+      <h2 class="section-title era-4">۴. عصر طلایی: دوران عباسی</h2>
+      <p class="content-text mb-6">بغداد به قلب فرهنگی جهان اسلام تبدیل شد. این دوران، عصر شکوفایی علم، ف��سفه و ادبیات ��ود.</p>
+      <div class="highlight-box era-4">
+       <p class="font-bold text-lg mb-3 lalezar-text" style="color: #ff453a;">🌟 عصر شکوفایی</p>
+       <p class="content-text">ترکیب فرهنگ عربی، ایرانی و یونانی باعث غنای بی‌نظیر ادبی شد.</p>
+      </div>
+      <ul>
+       <li><strong>ابوالعتاهیه:</strong> شاعر زهد و حکمت</li>
+       <li><strong>بشار بن برد:</strong> نوآور شعر عباسی</li>
+       <li><strong>ابونواس:</strong> شاعر خمر و لذت‌گرایی</li>
+       <li><strong>متنبی:</strong> بزرگترین شاعر عربی</li>
+       <li><strong>نثر:</strong> ظهور کتاب‌های بزرگ مانند الف لیله و لیل��، کلیله و د��نه</li>
+      </ul>
+     </div>
+    </div>
+   </section><!-- Final/Conclusion Section -->
+   <section class="page-section" id="section-5">
+    <div class="hero-section fade-in">
+     <div class="glass-card p-12 md:p-16 max-w-3xl mx-auto text-center">
+      <div class="mb-8">
+       <svg width="80" height="80" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto;"><circle cx="12" cy="12" r="10" stroke="url(#gradient)" stroke-width="2" fill="none" opacity="0.9" /> <path d="M8 12L11 15L16 9" stroke="url(#gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /> <defs>
+         <lineargradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#ff9f0a;stop-opacity:1" />
+          <stop offset="33%" style="stop-color:#32d74b;stop-opacity:1" />
+          <stop offset="66%" style="stop-color:#0a84ff;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ff453a;stop-opacity:1" />
+         </lineargradient>
+        </defs>
+       </svg>
+      </div>
+      <h2 class="text-5xl mb-6 lalezar-text" style="color: #f5f5f7;">میراثی جاودانه</h2>
+      <p class="content-text text-xl mb-8 leading-relaxed">ادبیات عربی در دوران اسلامی، سفری درخشان از شعر کهن تا عصر طلایی بود که تأثیر آن تا امروز در فرهنگ جهان باقی مانده است.</p>
+      <div class="flex justify-center gap-3 mb-8">
+       <div class="hero-line w-20" style="background: #ff9f0a;"></div>
+       <div class="hero-line w-20" style="background: #32d74b;"></div>
+       <div class="hero-line w-20" style="background: #0a84ff;"></div>
+       <div class="hero-line w-20" style="background: #ff453a;"></div>
+      </div>
+      <p class="text-sm" style="color: #86868b;">«الشعر دیوان العرب»<br>
+        شعر، دیوان تاریخ عرب است</p>
+     </div>
+    </div>
+   </section>
+  </div><!-- Theme Toggle Button --> <button id="theme-toggle" class="fixed top-6 left-6 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300" style="background: rgba(40, 40, 40, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);">
+   <svg id="theme-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><!-- Moon Icon (for dark mode) --> <path id="moon-icon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#f5f5f7" opacity="0.9" />
+   </svg></button> <!-- Language Toggle Button --> <button id="language-toggle" class="fixed top-6 left-20 z-50 px-4 h-12 rounded-full flex items-center justify-center gap-2 transition-all duration-300" style="background: rgba(40, 40, 40, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);">
+   <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" fill="#f5f5f7" opacity="0.9" />
+   </svg><span id="current-language" class="text-sm font-medium" style="color: #f5f5f7;">فارسی</span> </button> <!-- macOS Dock-style Timeline Navigation with SVG Icons -->
+  <div class="dock-container">
+   <div class="dock"><!-- Home Icon -->
+    <div class="dock-item active" data-section="0" data-tooltip="آغاز" style="background: linear-gradient(135deg, #434343 0%, #282828 100%);">
+     <svg width="28" height="28" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 12H5V20H11V14H13V20H19V12H22L12 2Z" fill="white" opacity="0.9" />
+     </svg>
+     <div class="dock-indicator"></div>
+    </div><!-- Scroll/Manuscript Icon for Pre-Islamic Era -->
+    <div class="dock-item" data-section="1" data-tooltip="دوران جاهلی" style="background: linear-gradient(135deg, #ff9f0a 0%, #ff8c00 100%);">
+     <svg width="28" height="28" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="white" opacity="0.9" /> <path d="M14 2V8H20" fill="white" opacity="0.6" /> <path d="M8 12H16M8 16H13" stroke="#ff9f0a" stroke-width="1.5" stroke-linecap="round" />
+     </svg>
+     <div class="dock-indicator"></div>
+    </div><!-- Crescent Moon Icon for Early Islamic Era -->
+    <div class="dock-item" data-section="2" data-tooltip="صدر اسلام" style="background: linear-gradient(135deg, #32d74b 0%, #28c73f 100%);">
+     <svg width="28" height="28" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C12 2 9.5 5 9.5 9C9.5 10.933 10.567 12 12 12C13.433 12 14.5 10.933 14.5 9C14.5 5 12 2 12 2Z" fill="white" opacity="0.9" /> <circle cx="12" cy="17" r="5" fill="white" opacity="0.9" /> <path d="M12 22V19M12 15V12" stroke="#32d74b" stroke-width="2" stroke-linecap="round" />
+     </svg>
+     <div class="dock-indicator"></div>
+    </div><!-- Palace/Building Icon for Umayyad Era -->
+    <div class="dock-item" data-section="3" data-tooltip="دوران اموی" style="background: linear-gradient(135deg, #0a84ff 0%, #007aff 100%);">
+     <svg width="28" height="28" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10H21M3 10L5 4H19L21 10M3 10V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V10" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" /> <rect x="7" y="4" width="3" height="3" fill="white" opacity="0.7" /> <rect x="14" y="4" width="3" height="3" fill="white" opacity="0.7" /> <path d="M8 14H16M10 17H14" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+     </svg>
+     <div class="dock-indicator"></div>
+    </div><!-- Star Icon for Abbasid Golden Age -->
+    <div class="dock-item" data-section="4" data-tooltip="دوران عباسی" style="background: linear-gradient(135deg, #ff453a 0%, #ff3b30 100%);">
+     <svg width="28" height="28" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15 8.5L22 9.5L17 14.5L18.5 21.5L12 18L5.5 21.5L7 14.5L2 9.5L9 8.5L12 2Z" fill="white" opacity="0.9" /> <circle cx="12" cy="12" r="3" fill="#ff453a" opacity="0.8" />
+     </svg>
+     <div class="dock-indicator"></div>
+    </div><!-- Checkmark Icon for Conclusion -->
+    <div class="dock-item" data-section="5" data-tooltip="پایان" style="background: linear-gradient(135deg, #a1a1a6 0%, #86868b 100%);">
+     <svg width="28" height="28" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.9" /> <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+     </svg>
+     <div class="dock-indicator"></div>
+    </div>
+   </div>
+  </div>
+  <script>
+        const defaultConfig = {
+            main_title: "سفر ادبی��ت عربی",
+            subtitle: "از صحرا تا عصر طلایی بغداد"
+        };
+
+        async function onConfigChange(config) {
+            const mainTitle = config.main_title || defaultConfig.main_title;
+            const subtitle = config.subtitle || defaultConfig.subtitle;
+            
+            const mainTitleEl = document.getElementById('main-title');
+            const subtitleEl = document.getElementById('subtitle');
+            
+            if (mainTitleEl) mainTitleEl.textContent = mainTitle;
+            if (subtitleEl) subtitleEl.textContent = subtitle;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["main_title", config.main_title || defaultConfig.main_title],
+                ["subtitle", config.subtitle || defaultConfig.subtitle]
+            ]);
+        }
+
+        // Dock navigation
+        const scrollContainer = document.querySelector('.scroll-container');
+        const dockItems = document.querySelectorAll('.dock-item');
+        const sections = document.querySelectorAll('.page-section');
+
+        dockItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const sectionId = item.getAttribute('data-section');
+                const targetSection = document.getElementById(`section-${sectionId}`);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Update active dock item on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id.split('-')[1];
+                    dockItems.forEach(item => {
+                        if (item.getAttribute('data-section') === sectionId) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Language translations for all content
+        const translations = {
+            fa: {
+                home: "آغاز",
+                era1: "دوران جاهلی",
+                era2: "صدر اسلام",
+                era3: "دوران اموی",
+                era4: "دوران عباسی",
+                end: "پایان",
+                langName: "فارسی",
+                // Hero section
+                heroTitle: "سفر ادبیات عربی",
+                heroSubtitle: "از صحرا تا عصر طلایی بغداد",
+                scrollText: "برای شروع اسکرول کنید",
+                // Era 1
+                era1Badge: "📜 قبل از ۶۲۲ م",
+                era1Title: "۱. پایه‌های ادبی: دوران جاهلی",
+                era1Intro: "تصور کنید که عربستان پیش از اسلام، جایی بود که شاعران، بزرگترین و مهم‌ترین افراد جامعه به شمار می‌آمدند.",
+                era1BoxTitle: "💎 معلقات سبع",
+                era1BoxText: "هفت قصیده‌ی بسیار معروف و بلند که ارزش ادبی آن‌ها آنقدر زیاد بود که به آن‌ها \"آویختنی‌ها\" می‌گفتند.",
+                era1List1: "<strong>موضوعات اصلی:</strong> وصف بیابان، جنگ‌ها، عشق‌های پاک و افتخار به قبیله",
+                era1List2: "<strong>شاعران برجسته:</strong> امرؤالقیس، طرفه، زهیر بن ابی سلمی",
+                era1List3: "<strong>ویژگی‌ها:</strong> فصاحت، بلاغت و توصیفات دقیق از طبیعت",
+                // Era 2
+                era2Badge: "🌙 ۶۲۲ - ۷۵۰ م",
+                era2Title: "۲. عصر صدر اسلام و اموی",
+                era2Intro: "با ظهور اسلام، قرآن کریم به عنوان شاهکار ادبی عربی، الگوی جدیدی برای زبان و بیان ایجاد کرد.",
+                era2BoxTitle: "🌟 تحول بزرگ",
+                era2BoxText: "شعر از وصف جنگ و بیابان به سمت معنویت، اخلاق و دعوت به اسلام حرکت کرد.",
+                era2List1: "<strong>شعر سیاسی:</strong> ظهور شعرهای حزبی و احزاب مختلف",
+                era2List2: "<strong>غزل عذری:</strong> شعرهای عاشقانه و پاک با شاعرانی مانند جمیل بثینه",
+                era2List3: "<strong>نثر:</strong> رشد خطابه و نامه‌نگاری",
+                era2List4: "<strong>فرزدق و جریر:</strong> نقائض و مناظرات شعری",
+                // Era 3
+                era3Badge: "🏛️ دوران اموی",
+                era3Title: "۳. گسترش سبک‌های شعری",
+                era3Intro: "در دوران اموی، شعر عربی به اوج تنوع و پیچیدگی خود رسید.",
+                era3BoxTitle: "🎭 سه مکتب اصلی",
+                era3BoxText: "مکتب حجاز (غزل)، مکتب عراق (سیاسی)، مکتب بادیه (سنتی)",
+                era3List1: "<strong>عمر بن ابی ربیعه:</strong> پیشگام شعر غزل شهری",
+                era3List2: "<strong>ذوالرمه:</strong> آخرین شاعر بزرگ بادیه‌نشین",
+                era3List3: "<strong>اخطل:</strong> شاعر مسیحی دربار اموی",
+                era3List4: "<strong>تنوع موضوعی:</strong> از عشق و رومانس تا سیاست و مدح",
+                // Era 4
+                era4Badge: "✨ ۷۵۰ - ۱۲۵۸ م",
+                era4Title: "۴. عصر طلایی: دوران عباسی",
+                era4Intro: "بغداد به قلب فرهنگی جهان اسلام تبدیل شد. این دوران، عصر شکوفایی علم، فلسفه و ادبیات بود.",
+                era4BoxTitle: "🌟 عصر شکوفایی",
+                era4BoxText: "ترکیب فرهنگ عربی، ایرانی و یونانی باعث غنای بی‌نظیر ادبی شد.",
+                era4List1: "<strong>ابوالعتاهیه:</strong> شاعر زهد و حکمت",
+                era4List2: "<strong>بشار بن برد:</strong> نوآور شعر عباسی",
+                era4List3: "<strong>ابونواس:</strong> شاعر خمر و لذت‌گرایی",
+                era4List4: "<strong>متنبی:</strong> بزرگترین شاعر عربی",
+                era4List5: "<strong>نثر:</strong> ظهور کتاب‌های بزرگ مانند الف لیله و لیله، کلیله و دمنه",
+                // Conclusion
+                conclusionTitle: "میراثی جاودانه",
+                conclusionText: "ادبیات عربی در دوران اسلامی، سفری درخشان از شعر کهن تا عصر طلایی بود که تأثیر آن تا امروز در فرهنگ جهان باقی مانده است.",
+                conclusionQuote: "«الشعر دیوان العرب»<br>شعر، دیوان تاریخ عرب است"
+            },
+            en: {
+                home: "Home",
+                era1: "Pre-Islamic Era",
+                era2: "Early Islamic",
+                era3: "Umayyad Period",
+                era4: "Abbasid Era",
+                end: "Conclusion",
+                langName: "English",
+                // Hero section
+                heroTitle: "Journey of Arabic Literature",
+                heroSubtitle: "From the Desert to Baghdad's Golden Age",
+                scrollText: "Scroll to begin",
+                // Era 1
+                era1Badge: "📜 Before 622 CE",
+                era1Title: "1. Literary Foundations: Pre-Islamic Era",
+                era1Intro: "Imagine pre-Islamic Arabia, where poets were the greatest and most important figures in society.",
+                era1BoxTitle: "💎 The Seven Mu'allaqat",
+                era1BoxText: "Seven famous lengthy poems of such literary value that they were called \"The Hanging Ones.\"",
+                era1List1: "<strong>Main Themes:</strong> Desert descriptions, wars, pure love, and tribal pride",
+                era1List2: "<strong>Notable Poets:</strong> Imru' al-Qais, Tarafa, Zuhayr ibn Abi Sulma",
+                era1List3: "<strong>Characteristics:</strong> Eloquence, rhetoric, and precise nature descriptions",
+                // Era 2
+                era2Badge: "🌙 622 - 750 CE",
+                era2Title: "2. Early Islamic & Umayyad Era",
+                era2Intro: "With the advent of Islam, the Quran as an Arabic literary masterpiece created a new model for language and expression.",
+                era2BoxTitle: "🌟 Great Transformation",
+                era2BoxText: "Poetry shifted from describing war and desert to spirituality, ethics, and calling to Islam.",
+                era2List1: "<strong>Political Poetry:</strong> Rise of partisan poems and different factions",
+                era2List2: "<strong>Chaste Love Poetry:</strong> Pure romantic poems with poets like Jamil Buthaina",
+                era2List3: "<strong>Prose:</strong> Growth of oratory and letter writing",
+                era2List4: "<strong>Al-Farazdaq & Jarir:</strong> Poetic debates and contests",
+                // Era 3
+                era3Badge: "🏛️ Umayyad Period",
+                era3Title: "3. Expansion of Poetic Styles",
+                era3Intro: "During the Umayyad period, Arabic poetry reached its peak in diversity and complexity.",
+                era3BoxTitle: "🎭 Three Main Schools",
+                era3BoxText: "Hijaz School (love poetry), Iraq School (political), Bedouin School (traditional)",
+                era3List1: "<strong>Umar ibn Abi Rabi'ah:</strong> Pioneer of urban love poetry",
+                era3List2: "<strong>Dhu ar-Rummah:</strong> Last great Bedouin poet",
+                era3List3: "<strong>Al-Akhtal:</strong> Christian poet of the Umayyad court",
+                era3List4: "<strong>Thematic Diversity:</strong> From love and romance to politics and praise",
+                // Era 4
+                era4Badge: "✨ 750 - 1258 CE",
+                era4Title: "4. Golden Age: Abbasid Era",
+                era4Intro: "Baghdad became the cultural heart of the Islamic world. This was the era of flourishing science, philosophy, and literature.",
+                era4BoxTitle: "🌟 Era of Prosperity",
+                era4BoxText: "The blend of Arab, Persian, and Greek cultures created unprecedented literary richness.",
+                era4List1: "<strong>Abu al-Atahiya:</strong> Poet of asceticism and wisdom",
+                era4List2: "<strong>Bashshar ibn Burd:</strong> Innovator of Abbasid poetry",
+                era4List3: "<strong>Abu Nuwas:</strong> Poet of wine and hedonism",
+                era4List4: "<strong>Al-Mutanabbi:</strong> Greatest Arab poet",
+                era4List5: "<strong>Prose:</strong> Emergence of great books like One Thousand and One Nights, Kalila wa Dimna",
+                // Conclusion
+                conclusionTitle: "An Eternal Legacy",
+                conclusionText: "Arabic literature in the Islamic period was a brilliant journey from ancient poetry to the golden age, whose influence remains in world culture today.",
+                conclusionQuote: "«الشعر ديوان العرب»<br>Poetry is the record of the Arabs"
+            },
+            ar: {
+                home: "البداية",
+                era1: "العصر الجاهلي",
+                era2: "صدر الإسلام",
+                era3: "العصر الأموي",
+                era4: "العصر العباسي",
+                end: "الخاتمة",
+                langName: "العربية",
+                // Hero section
+                heroTitle: "رحلة الأدب العربي",
+                heroSubtitle: "من الصحراء إلى العصر الذهبي لبغداد",
+                scrollText: "قم بالتمرير للبدء",
+                // Era 1
+                era1Badge: "📜 قبل ٦٢٢ م",
+                era1Title: "١. الأسس الأدبية: العصر الجاهلي",
+                era1Intro: "تخيل شبه الجزيرة العربية قبل الإسلام، حيث كان الشعراء أعظم وأهم الشخصيات في المجتمع.",
+                era1BoxTitle: "💎 المعلقات السبع",
+                era1BoxText: "سبع قصائد طويلة مشهورة كانت قيمتها الأدبية عظيمة لدرجة أنها سميت \"المعلقات\".",
+                era1List1: "<strong>المواضيع الرئيسية:</strong> وصف الصحراء، الحروب، الحب العفيف والفخر بالقبيلة",
+                era1List2: "<strong>الشعراء البارزون:</strong> امرؤ القيس، طرفة، زهير بن أبي سلمى",
+                era1List3: "<strong>الخصائص:</strong> الفصاحة، البلاغة والأوصاف الدقيقة للطبيعة",
+                // Era 2
+                era2Badge: "🌙 ٦٢٢ - ٧٥٠ م",
+                era2Title: "٢. عصر صدر الإسلام والأموي",
+                era2Intro: "مع ظهور الإسلام، أصبح القرآن الكريم تحفة أدبية عربية، وخلق نموذجاً جديداً للغة والتعبير.",
+                era2BoxTitle: "🌟 التحول الكبير",
+                era2BoxText: "انتقل الشعر من وصف الحرب والصحراء إلى الروحانية والأخلاق والدعوة إلى الإسلام.",
+                era2List1: "<strong>الشعر السياسي:</strong> ظهور الشعر الحزبي والأحزاب المختلفة",
+                era2List2: "<strong>الغزل العذري:</strong> القصائد الرومانسية العفيفة مع شعراء مثل جميل بثينة",
+                era2List3: "<strong>النثر:</strong> نمو الخطابة والمراسلات",
+                era2List4: "<strong>الفرزدق وجرير:</strong> النقائض والمناظرات الشعرية",
+                // Era 3
+                era3Badge: "🏛️ العصر الأموي",
+                era3Title: "٣. توسع الأساليب الشعرية",
+                era3Intro: "خلال العصر الأموي، وصل الشعر العربي إلى ذروة التنوع والتعقيد.",
+                era3BoxTitle: "🎭 ثلاث مدارس رئيسية",
+                era3BoxText: "مدرسة الحجاز (الغزل)، مدرسة العراق (السياسي)، مدرسة البادية (التقليدي)",
+                era3List1: "<strong>عمر بن أبي ربيعة:</strong> رائد شعر الغزل الحضري",
+                era3List2: "<strong>ذو الرمة:</strong> آخر شاعر بدوي عظيم",
+                era3List3: "<strong>الأخطل:</strong> شاعر مسيحي في البلاط الأموي",
+                era3List4: "<strong>التنوع الموضوعي:</strong> من الحب والرومانسية إلى السياسة والمديح",
+                // Era 4
+                era4Badge: "✨ ٧٥٠ - ١٢٥٨ م",
+                era4Title: "٤. العصر الذهبي: العصر العباسي",
+                era4Intro: "أصبحت بغداد القلب الثقافي للعالم الإسلامي. كان هذا عصر ازدهار العلم والفلسفة والأدب.",
+                era4BoxTitle: "🌟 عصر الازدهار",
+                era4BoxText: "أدى المزيج من الثقافات العربية والفارسية واليونانية إلى ثراء أدبي لا مثيل له.",
+                era4List1: "<strong>أبو العتاهية:</strong> شاعر الزهد والحكمة",
+                era4List2: "<strong>بشار بن برد:</strong> مبتكر الشعر العباسي",
+                era4List3: "<strong>أبو نواس:</strong> شاعر الخمر واللذة",
+                era4List4: "<strong>المتنبي:</strong> أعظم شاعر عربي",
+                era4List5: "<strong>النثر:</strong> ظهور كتب عظيمة مثل ألف ليلة وليلة، كليلة ودمنة",
+                // Conclusion
+                conclusionTitle: "إرث خالد",
+                conclusionText: "كان الأدب العربي في العصر الإسلامي رحلة رائعة من الشعر القديم إلى العصر الذهبي، الذي لا يزال تأثيره باقياً في الثقافة العالمية حتى اليوم.",
+                conclusionQuote: "«الشعر ديوان العرب»<br>الشعر هو سجل تاريخ العرب"
+            }
+        };
+
+        // Language toggle functionality
+        const languageToggle = document.getElementById('language-toggle');
+        const currentLanguageSpan = document.getElementById('current-language');
+        let currentLang = localStorage.getItem('language') || 'fa';
+        
+        function updateAllContent(lang) {
+            const t = translations[lang];
+            
+            // Update dock tooltips
+            const tooltips = ['home', 'era1', 'era2', 'era3', 'era4', 'end'];
+            dockItems.forEach((item, index) => {
+                if (index < tooltips.length) {
+                    item.setAttribute('data-tooltip', t[tooltips[index]]);
+                }
+            });
+            currentLanguageSpan.textContent = t.langName;
+            
+            // Update hero section
+            document.querySelector('.hero-title').textContent = t.heroTitle;
+            document.querySelector('.hero-subtitle').textContent = t.heroSubtitle;
+            document.querySelector('.scroll-indicator span').textContent = t.scrollText;
+            
+            // Update Era 1
+            const era1Section = document.getElementById('section-1');
+            era1Section.querySelector('.era-badge').textContent = t.era1Badge;
+            era1Section.querySelector('.section-title').textContent = t.era1Title;
+            era1Section.querySelectorAll('.content-text')[0].textContent = t.era1Intro;
+            era1Section.querySelector('.highlight-box .lalezar-text').textContent = t.era1BoxTitle;
+            era1Section.querySelector('.highlight-box .content-text').textContent = t.era1BoxText;
+            const era1List = era1Section.querySelectorAll('ul li');
+            era1List[0].innerHTML = t.era1List1;
+            era1List[1].innerHTML = t.era1List2;
+            era1List[2].innerHTML = t.era1List3;
+            
+            // Update Era 2
+            const era2Section = document.getElementById('section-2');
+            era2Section.querySelector('.era-badge').textContent = t.era2Badge;
+            era2Section.querySelector('.section-title').textContent = t.era2Title;
+            era2Section.querySelectorAll('.content-text')[0].textContent = t.era2Intro;
+            era2Section.querySelector('.highlight-box .lalezar-text').textContent = t.era2BoxTitle;
+            era2Section.querySelector('.highlight-box .content-text').textContent = t.era2BoxText;
+            const era2List = era2Section.querySelectorAll('ul li');
+            era2List[0].innerHTML = t.era2List1;
+            era2List[1].innerHTML = t.era2List2;
+            era2List[2].innerHTML = t.era2List3;
+            era2List[3].innerHTML = t.era2List4;
+            
+            // Update Era 3
+            const era3Section = document.getElementById('section-3');
+            era3Section.querySelector('.era-badge').textContent = t.era3Badge;
+            era3Section.querySelector('.section-title').textContent = t.era3Title;
+            era3Section.querySelectorAll('.content-text')[0].textContent = t.era3Intro;
+            era3Section.querySelector('.highlight-box .lalezar-text').textContent = t.era3BoxTitle;
+            era3Section.querySelector('.highlight-box .content-text').textContent = t.era3BoxText;
+            const era3List = era3Section.querySelectorAll('ul li');
+            era3List[0].innerHTML = t.era3List1;
+            era3List[1].innerHTML = t.era3List2;
+            era3List[2].innerHTML = t.era3List3;
+            era3List[3].innerHTML = t.era3List4;
+            
+            // Update Era 4
+            const era4Section = document.getElementById('section-4');
+            era4Section.querySelector('.era-badge').textContent = t.era4Badge;
+            era4Section.querySelector('.section-title').textContent = t.era4Title;
+            era4Section.querySelectorAll('.content-text')[0].textContent = t.era4Intro;
+            era4Section.querySelector('.highlight-box .lalezar-text').textContent = t.era4BoxTitle;
+            era4Section.querySelector('.highlight-box .content-text').textContent = t.era4BoxText;
+            const era4List = era4Section.querySelectorAll('ul li');
+            era4List[0].innerHTML = t.era4List1;
+            era4List[1].innerHTML = t.era4List2;
+            era4List[2].innerHTML = t.era4List3;
+            era4List[3].innerHTML = t.era4List4;
+            era4List[4].innerHTML = t.era4List5;
+            
+            // Update Conclusion
+            const conclusionSection = document.getElementById('section-5');
+            conclusionSection.querySelector('.text-5xl').textContent = t.conclusionTitle;
+            conclusionSection.querySelector('.content-text').textContent = t.conclusionText;
+            conclusionSection.querySelector('.text-sm').innerHTML = t.conclusionQuote;
+        }
+        
+        // Initialize language
+        updateAllContent(currentLang);
+        
+        languageToggle.addEventListener('click', () => {
+            // Cycle through languages: fa -> en -> ar -> fa
+            if (currentLang === 'fa') {
+                currentLang = 'en';
+            } else if (currentLang === 'en') {
+                currentLang = 'ar';
+            } else {
+                currentLang = 'fa';
+            }
+            
+            localStorage.setItem('language', currentLang);
+            updateAllContent(currentLang);
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const moonIcon = document.getElementById('moon-icon');
+        
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        body.className = `h-full w-full ${currentTheme}-mode`;
+        
+        // Update icon based on current theme
+        function updateThemeIcon() {
+            if (body.classList.contains('dark-mode')) {
+                // Show moon icon for dark mode
+                moonIcon.setAttribute('d', 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
+                moonIcon.setAttribute('fill', '#f5f5f7');
+            } else {
+                // Show sun icon for light mode
+                moonIcon.setAttribute('d', 'M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 6a6 6 0 100 12 6 6 0 000-12z');
+                moonIcon.setAttribute('fill', '#1d1d1f');
+            }
+        }
+        
+        updateThemeIcon();
+        
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeIcon();
+        });
+
+        // Initialize SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9acea210f46cae0b',t:'MTc2NTU1NzMwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
